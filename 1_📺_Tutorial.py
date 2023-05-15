@@ -11,7 +11,7 @@ st.set_page_config(
 
 
 _, col_video, _ = st.columns([1, 8, 1], gap="large")
-video_file = open("D:\\PYTHON\\Project-SimplexAlgorithm\\powerBI.mp4", 'rb')
+video_file = open("powerBI.mp4", 'rb')
 video_bytes = video_file.read()
 col_video.title("Tutorial")
 col_video.video(video_bytes)
