@@ -4,8 +4,8 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(
-	page_title = "Project app",
-	page_icon = "🤣",
+	page_title = "Simplex App",
+	page_icon = "1️⃣",
 	layout="wide"
 )
 st.title("Simplex Algorithms")
