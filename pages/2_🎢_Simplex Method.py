@@ -148,7 +148,6 @@ if (st.button( "Start")):
 	    		result = "Solution is unbounded ⇒ " + "$(P): z = -\infty$"
 	    	else:
 	    		result = "Solution is unbounded ⇒ " + "$(P): z = +\infty$"
-	    	st.info("hello")
 	    	exit(st.markdown(f'__<p style="color:#e5fce2; text-align:left; height: 45px; font-size:1.5rem; background:  hsl(89, 85%, 53%, .2); border-radius: 8px;"> &ensp; {result} </p>__', unsafe_allow_html=True))
 	        
 
