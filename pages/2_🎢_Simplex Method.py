@@ -8,7 +8,7 @@ st.set_page_config(
 	page_icon = "1️⃣",
 	layout="wide"
 )
-st.title("Simplex Algorithms")
+st.title("Problem")
 
 
 with st.sidebar:
