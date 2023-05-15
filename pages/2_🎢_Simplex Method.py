@@ -79,6 +79,7 @@ for i, col in enumerate(cols_var_constraint):
 		col.latex(",")
 		latex_var_constraint += ','
 
+st.divider()
 if (st.button( "Start")):
 	def change_arr2D(str_object, str_constraints):
 	    if option == "Minimize":
