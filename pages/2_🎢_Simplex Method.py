@@ -285,6 +285,7 @@ if (st.button( "Start")):
 		return 1 if abs(a - round(a)) <= 1e-10 else 0
 
 	obj, variables, problem = calculator(arr, option)
+	st.divider()
 
 	if problem == 1:
 		st.markdown('__<p style="font-family:sans-serif; color:White; font-size: 20px;"> There are infinitely many values . One of them: </p>__', unsafe_allow_html=True)
