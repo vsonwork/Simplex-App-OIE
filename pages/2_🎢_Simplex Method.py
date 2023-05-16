@@ -101,7 +101,7 @@ for i, col in enumerate(cols_var_constraint):
 		latex_var_constraint += ','
 
 st.divider()
-if (st.button( "Start")):
+if (st.button( "Direct Solution")):
 	def change_arr2D(str_object, str_constraints):
 	    if option == "Minimize":
 	        arr_var = [eval(val) for val in str_object]
@@ -285,6 +285,9 @@ if (st.button( "Start")):
 	        return True
 	    except SyntaxError:
 	        return False
+	
+	def isVariable(a):
+		return 1 if abs(a - round(a)) <= 1e-10 else 0
 
 	str_object = ["0" if val == "" else val for val in str_object]
 	str_constraints = ["0" if val == "" else val for val in str_constraints]
@@ -301,9 +304,6 @@ if (st.button( "Start")):
 
 
 	arr = preprocessing(arr_var, arr_constraint, var_constraint)	
-
-	def isVariable(a):
-		return 1 if abs(a - round(a)) <= 1e-10 else 0
 
 	obj, variables, problem = calculator(arr, option)
 	st.divider()
