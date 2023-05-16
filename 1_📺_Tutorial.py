@@ -27,6 +27,8 @@ background-attachment: fixed;
 </style>
 """
 
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 _, col_video, _ = st.columns([1, 8, 1], gap="large")
 video_file = open("powerBI.mp4", 'rb')
 video_bytes = video_file.read()
