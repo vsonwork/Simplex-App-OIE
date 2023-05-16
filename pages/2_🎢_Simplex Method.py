@@ -8,6 +8,26 @@ st.set_page_config(
 	page_icon = "1️⃣",
 	layout="wide"
 )
+
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://raw.githubusercontent.com/vsonwork/Simplex-App-OIE/main/img/background_main.jpg?token=GHSAT0AAAAAACBEEOWHVKVZSZE5WPCU7ZVCZDC4CBQ");
+background-size: 150%;
+background-position: top left;
+background-repeat: repeat;
+background-attachment: local;
+}}
+
+[data-testid="stSidebar"] > div:first-child {{
+background-image: url("https://raw.githubusercontent.com/vsonwork/Simplex-App-OIE/main/img/background_sida.webp?token=GHSAT0AAAAAACBEEOWGKNFY6SERGIVWB3W6ZDC4CIA");
+background-position: center; 
+background-repeat: no-repeat;
+background-attachment: fixed;
+}}
+</style>
+"""
+
 st.title("Problem")
 
 
