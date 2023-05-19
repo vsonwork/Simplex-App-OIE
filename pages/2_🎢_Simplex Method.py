@@ -4,11 +4,32 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(
-	page_title = "Project app",
-	page_icon = "🤣",
+	page_title = "Simplex App",
+	page_icon = "1️⃣",
 	layout="wide"
 )
-st.title("Simplex Algorithms")
+
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://raw.githubusercontent.com/vsonwork/Simplex-App-OIE/main/img/background_main.jpg?token=GHSAT0AAAAAACBEEOWHVKVZSZE5WPCU7ZVCZDC4CBQ");
+background-size: 150%;
+background-position: top left;
+background-repeat: repeat;
+background-attachment: local;
+}}
+
+[data-testid="stSidebar"] > div:first-child {{
+background-image: url("https://raw.githubusercontent.com/vsonwork/Simplex-App-OIE/main/img/background_sida.webp?token=GHSAT0AAAAAACBEEOWGKNFY6SERGIVWB3W6ZDC4CIA");
+background-position: center; 
+background-repeat: no-repeat;
+background-attachment: fixed;
+}}
+</style>
+"""
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+st.title("Problem")
 
 
 with st.sidebar:
@@ -79,7 +100,8 @@ for i, col in enumerate(cols_var_constraint):
 		col.latex(",")
 		latex_var_constraint += ','
 
-if (st.button( "Start")):
+st.divider()
+if (st.button( "Direct Solution")):
 	def change_arr2D(str_object, str_constraints):
 	    if option == "Minimize":
 	        arr_var = [eval(val) for val in str_object]
@@ -148,7 +170,6 @@ if (st.button( "Start")):
 	    		result = "Solution is unbounded ⇒ " + "$(P): z = -\infty$"
 	    	else:
 	    		result = "Solution is unbounded ⇒ " + "$(P): z = +\infty$"
-	    	st.info("hello")
 	    	exit(st.markdown(f'__<p style="color:#e5fce2; text-align:left; height: 45px; font-size:1.5rem; background:  hsl(89, 85%, 53%, .2); border-radius: 8px;"> &ensp; {result} </p>__', unsafe_allow_html=True))
 	        
 
@@ -264,6 +285,9 @@ if (st.button( "Start")):
 	        return True
 	    except SyntaxError:
 	        return False
+	
+	def isVariable(a):
+		return 1 if abs(a - round(a)) <= 1e-10 else 0
 
 	str_object = ["0" if val == "" else val for val in str_object]
 	str_constraints = ["0" if val == "" else val for val in str_constraints]
@@ -281,10 +305,8 @@ if (st.button( "Start")):
 
 	arr = preprocessing(arr_var, arr_constraint, var_constraint)	
 
-	def isVariable(a):
-		return 1 if abs(a - round(a)) <= 1e-10 else 0
-
 	obj, variables, problem = calculator(arr, option)
+	st.divider()
 
 	if problem == 1:
 		st.markdown('__<p style="font-family:sans-serif; color:White; font-size: 20px;"> There are infinitely many values . One of them: </p>__', unsafe_allow_html=True)
