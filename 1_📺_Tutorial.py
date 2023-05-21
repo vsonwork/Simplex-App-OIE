@@ -30,14 +30,14 @@ background-attachment: fixed;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 _, col_video, _ = st.columns([1, 8, 1], gap="large")
-video_file = open("powerBI.mp4", 'rb')
+video_file = open("/video/simplex_video.mp4", 'rb')
 video_bytes = video_file.read()
 col_video.title("Tutorial")
 col_video.video(video_bytes)
 
 col_video.markdown("### Video credit:")
 col_video.markdown("Creator&ensp;: User __Son Nguyen__ from __ONCE IS ENOUGH__.")
-col_video.write("YouTube: [Simplex Method App | ONCE IS ENOUGH](https://www.youtube.com/watch?v=xHewnG5eiKE)")
+col_video.write("YouTube: [Simplex Method App | ONCE IS ENOUGH](https://www.youtube.com/watch?v=U6hXUP0tJlw)")
 
 hide_st_style = """
             <style>
