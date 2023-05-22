@@ -283,7 +283,7 @@ if (st.button( "Direct Solution")):
 	    try:
 	        eval(num)
 	        return True
-	    except SyntaxError or ZeroDivisionError:
+	    except (SyntaxError, ZeroDivisionError):
 	        return False
 	
 	def isVariable(a):
