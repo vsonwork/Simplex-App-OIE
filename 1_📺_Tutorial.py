@@ -30,7 +30,7 @@ background-attachment: fixed;
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 _, col_video, _ = st.columns([1, 8, 1], gap="large")
-video_file = open("/video/simplex_video.mp4", 'rb')
+video_file = open("video/simplex_video.mp4", 'rb')
 video_bytes = video_file.read()
 col_video.title("Tutorial")
 col_video.video(video_bytes)
