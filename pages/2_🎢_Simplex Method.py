@@ -31,6 +31,15 @@ st.markdown(page_bg_img, unsafe_allow_html=True)
 
 st.title("Problem")
 
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 with st.sidebar:
 	n = st.number_input('How many decision variables are the problem?', value = 3, min_value = 1, max_value = 9, step = 1)
@@ -360,12 +369,5 @@ if (st.button( "Direct Solution")):
 		_, col_plot, _ = st.columns([1, 4, 1], gap="small")
 		col_plot.pyplot(fig)
 
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
+
 		
